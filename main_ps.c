@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main_ps.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/03/26 15:50:57 by bbento-a         ###   ########.fr       */
+/*   Created: 2024/03/26 14:59:23 by bbento-a          #+#    #+#             */
+/*   Updated: 2024/03/26 15:56:09 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <stdio.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-
-typedef struct s_stack_node
+int	main(int argc, char **argv)
 {
-	int					value;
-	struct s_stack_node	*next_node;
-	struct s_stack_node *prev_node;
-}	t_stack_node;
+	t_stack_node	*a;
+	t_stack_node	*b;
 
-
-// Main function of the program
-//	main_ps.c
-
-
-// Moves operations
-//	moves_push.c
-//	moves_rotate.c
-//	moves_swap.c
-
-
-
-#endif
+	a = NULL;
+	b = NULL;
+}
