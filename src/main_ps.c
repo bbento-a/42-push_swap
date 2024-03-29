@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:59:23 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/03/26 15:56:09 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:57:17 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
+	initialize_stack(a, **argv);
 }
