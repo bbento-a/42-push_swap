@@ -32,6 +32,7 @@ BONUS_OBJECTS = $(BONUS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -std=c99
 
+
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
