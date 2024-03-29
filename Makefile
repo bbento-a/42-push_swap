@@ -6,42 +6,44 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 14:19:45 by bbento-a          #+#    #+#              #
-#    Updated: 2024/03/27 11:49:58 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/03/28 16:01:10 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap.a
 
+SRCS_FILES = main_ps.c\
+			 moves_push.c
+
 SRCS = $(addprefix src/, $(SRCS_FILES))
-SRCS_FILES = push_swap.h\
-			 main.c\
 
-OBJS = 
-OBJS_FILES =
+OBJS_DIR = obj
+OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:src/%.c=%.o))
 
-LIBFT = $(LIBFT_PATH)/libft.a
 LIBFT_PATH = ./libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
 CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-LIBFT_PATH = ./libft
 
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	mkdir -p $(OBJS_DIR)
+	$(CC) $(CCFLAGS) $(SRCS) -o $@
 
-$(LIBFT)
+$(LIBFT) :
 	make -C $(LIBFT_PATH) all
 
 
-clean: $(RM) $(OBJS)
+clean: $(RM) *.o
 
 fclean: clean
 		$(RM) $(NAME)
+		rmdir $(OBJS_DIR)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re
