@@ -6,11 +6,22 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:24:16 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/03/29 15:19:51 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/03/30 13:49:06 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+// This function is going to find the last node of the linked list
+t_node	set_lastnode(t_node *lst_node)
+{
+	if (!lst_node)
+		return (NULL);
+	while (lst_node->next_node)
+		lst_node = lst_node->next_node;
+	return (lst_node);
+}
 
 // This function is going to append a new node with n value to the stack.It
 // will "attach" the new node if there are already nodes to the end of the list
@@ -26,7 +37,18 @@ void	append_node(t_node **stack, int n)
 		return (NULL);
 	new_node->next_node = NULL;
 	new_node->value = n;
-	if ()
+	if (!(*stack)
+	{
+		*stack == new_node;
+		new_node->prev_node = NULL;
+	}
+	else
+	{
+		last_node = set_lastnode(*stack);
+		last_node->next = new_node;
+		new_node->prev_node = last_node;
+	}
+
 }
 
 // This function will iterate all arguments and append the value to a new node
