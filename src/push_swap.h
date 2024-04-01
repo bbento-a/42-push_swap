@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/03/29 15:18:33 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/01 16:20:56 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,12 @@ typedef struct s_stack_node
 
 // Stack Funtions
 //	stack_start.c
-void	append_node(t_node **stack, int nbr);
+t_node	set_lastnode(t_node *lst_node);
+void	append_node(t_node **stack, int n);
 void	initialize_stack(t_node **a, char **argv);
+
+//	stack_utils.c
+long	ft_atol(char *str);
 
 // Moves operations
 //	moves_push.c
