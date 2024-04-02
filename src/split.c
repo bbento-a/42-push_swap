@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 19:36:08 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/02 12:35:20 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/02 12:47:29 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,9 @@ static int	ft_wordcount(char *s, char c)
 	return (charc);
 }
 
-//	In case of having the values given in only one argument (for example, "7 6 1 3 2"),
-//	the split will make each value an individual argument inside of an array of arguments
+//	In case of having the values given in only one argument
+//	(for example "7 6 1 3 2"), the split will make each value an
+//	individual argument inside of an array of arguments
 char	**ft_split_arg(char *arg, char sep)
 {
 	char	**res;
