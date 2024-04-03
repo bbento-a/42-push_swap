@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:05:38 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 07:05:39 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/03 10:36:35 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Here we check for any syntax errors. There can't be any other characters
 // besides numbers, and one - or + symbols before the value
-int	syntax_checker(char *argv)
+int		syntax_checker(char *argv)
 {
 	int	i;
 
@@ -35,7 +35,7 @@ int	syntax_checker(char *argv)
 // In this checker we verify if there's any value duplicated, and if there is,
 // we return an error message. The first if statment is used just when we have
 // no nodes yet attached to the stack
-int	duplicate_checker(t_node *a, int n)
+int		duplicate_checker(t_node *a, int n)
 {
 	if (!a)
 		return (0);
@@ -46,4 +46,9 @@ int	duplicate_checker(t_node *a, int n)
 		a = a->next;
 	}
 	return (0);
+}
+
+void	error_checker()
+{
+
 }

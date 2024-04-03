@@ -6,22 +6,11 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 19:36:08 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/02 12:47:29 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/03 10:32:19 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-//	This function will free the memory allocated in case of unexpected behavior
-static int	ft_free(char **arg, int count)
-{
-	int	i;
-
-	i = 0;
-	while (i <= count)
-		free(arg[i++]);
-	return (NULL);
-}
 
 //	This function will count each char inside the of the "arguments"
 static int	ft_wordsize(char *s, char c, int i)
