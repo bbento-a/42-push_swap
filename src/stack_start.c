@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:24:16 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/02 11:49:00 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/03 06:53:15 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	append_node(t_node **stack, int n)
 	else
 	{
 		last_node = set_lastnode(*stack);
-		last_node->next = new_node;
+		last_node->next_node = new_node;
 		new_node->prev_node = last_node;
 	}
 }
@@ -57,7 +57,13 @@ void	initialize_stack(t_node **a, char **argv)
 
 	while (argv[i])
 	{
-		n = atol(argv[i]);
+		if (syntax_checker(argv[i]))
+			return ();
+		n = ft_atol(argv[i]);
+		if (n < INT_MIN || n > INT_MAX)
+			return ();
+		if (duplicate_checker(*a, (int)n))
+			return ();
 		append_node(a, (int)n);
 		i++;
 	}
