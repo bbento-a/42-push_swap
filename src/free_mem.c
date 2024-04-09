@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:27:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/09 11:42:54 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:12:21 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	free_mat(char **mat)
 		free(mat[i]);
 		i++;
 	}
+	free(mat);
 }
 
 //	Function to free each node of the stack
