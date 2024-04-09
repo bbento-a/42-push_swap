@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:24:16 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 06:53:15 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:22:15 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ void	initialize_stack(t_node **a, char **argv)
 	while (argv[i])
 	{
 		if (syntax_checker(argv[i]))
-			return ();
+			return (error_free(a, argv));
 		n = ft_atol(argv[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			return ();
+			return (error_free(a, argv));
 		if (duplicate_checker(*a, (int)n))
-			return ();
+			return (error_free(a, argv));
 		append_node(a, (int)n);
 		i++;
 	}

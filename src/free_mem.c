@@ -6,13 +6,14 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:27:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 10:33:59 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:42:54 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//	This function will free the memory allocated in case of unexpected behavior
+//	Function to free the memory allocated of an argument,
+//	in case of unexpected behavior
 int	ft_free_arg(char **arg, int count)
 {
 	int	i;
@@ -23,4 +24,43 @@ int	ft_free_arg(char **arg, int count)
 	return (NULL);
 }
 
+//	Function to free the matrix of chars (in this case)
+void	free_mat(char **mat)
+{
+	int	i;
+	int	j;
 
+	i = 0;
+	j = count_matlen(mat);
+	while (i <= j)
+	{
+		free(mat[i]);
+		i++;
+	}
+}
+
+//	Function to free each node of the stack
+void	free_stack(t_node **stack)
+{
+	t_node	*tmp;
+	if(!stack)
+		return ;
+	while(stack)
+	{
+		tmp = *stack->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	*stack = NULL;
+}
+
+int		count_matlen(char **mat)
+{
+	int len;
+
+	len = 0;
+	while(mat[i])
+		len++;
+	len++;	// for the \0 char
+	return (len);
+}

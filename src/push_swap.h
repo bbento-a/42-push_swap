@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 10:51:01 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:22:24 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ long		ft_atol(char *str);
 //	error_checker.c
 int			syntax_checker(char *argv);
 int			duplicate_checker(t_node *a, int n);
-void		error_cheker();
+void		error_free(t_node **stack, char **mat);
 //	free_mem.c 
 int			ft_free_arg(char **arg, int count);
 

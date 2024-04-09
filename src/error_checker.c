@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:05:38 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 10:36:35 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:37:53 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,12 @@ int		duplicate_checker(t_node *a, int n)
 	return (0);
 }
 
-void	error_checker()
+//	I use this function to free everything allocated before exit the program and
+//	write a error message so the user understands something unexpected happened
+void	error_free(t_node **stack, char **mat)
 {
-
+	free_stack(stack);
+	free_mat(mat);
+	ft_printf("Error\n");
+	exit(1);
 }
