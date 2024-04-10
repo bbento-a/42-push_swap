@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:27:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/09 12:12:21 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:28:44 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,5 @@ int		count_matlen(char **mat)
 	len = 0;
 	while(mat[i])
 		len++;
-	len++;	// for the \0 char
 	return (len);
 }
