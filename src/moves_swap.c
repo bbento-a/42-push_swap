@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:57:33 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/11 15:00:04 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:14:02 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	swap(t_node **stack)
 {
-
+	
 }
 
 void	sa(t_node **a)

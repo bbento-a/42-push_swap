@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:40:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/11 14:57:30 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:13:55 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	rotate(t_node **stack)
 {
+	t_node	lastnode;
 
 }
 
