@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/09 16:55:41 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/11 17:20:01 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char		**ft_split_arg(char *arg, char sep);
 //
 
 //	stack_start.c
-t_node		set_lastnode(t_node *lst_node);
+t_node		find_lastnode(t_node *lst_node);
 void		append_node(t_node **stack, int n);
 void		initialize_stack(t_node **a, char **argv);
 //	stack_utils.c
@@ -71,7 +71,26 @@ int			count_matlen(char **mat);
 // 
 
 //	moves_push.c
+static void	push(t_node **stacksrc, t_node **stackdest)
+void		pa(t_node **b, t_node **a);
+void		pb(t_node **a, t_node **b);
+
+//	moves_reverserotate.c
+static void	reverserotate(t_node **stack);
+void		rra(t_node **a);
+void		rrb(t_node **b);
+void		rrr(t_node **a, t_node **b);
+
 //	moves_rotate.c
+static void	rotate(t_node **stack);
+void		ra(t_node **a);
+void		rb(t_node **b);
+void		rr(t_node **a, t_node **b);
+
 //	moves_swap.c
+static void	swap(t_node **stack);
+void		sa(t_node **a);
+void		sb(t_node **b);
+void		ss(t_node **a, t_node **b);
 
 #endif
