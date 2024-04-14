@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:40:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 15:52:46 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:56:22 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static void	rotate(t_node **stack)
 	*stack->prev = NULL;
 	lastnode->next->prev = lastnode;
 	lastnode->next->next = NULL;
-
 }
 
 void	ra(t_node **a)
