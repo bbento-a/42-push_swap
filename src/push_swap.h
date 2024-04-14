@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/11 17:20:01 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 15:02:32 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		rb(t_node **b);
 void		rr(t_node **a, t_node **b);
 
 //	moves_swap.c
-static void	swap(t_node **stack);
+static void	swap(t_node **ptr);
 void		sa(t_node **a);
 void		sb(t_node **b);
 void		ss(t_node **a, t_node **b);
