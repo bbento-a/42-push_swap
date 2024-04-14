@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:00:12 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 20:18:58 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:21:20 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ void	pa(t_node **b, t_node **a)
 void	pb(t_node **a, t_node **b)
 {
 	push(b);
-	ft_printf("rb\n");
+	ft_printf("pb\n");
 }
