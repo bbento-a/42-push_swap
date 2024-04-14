@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:27:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/10 11:28:44 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:48:48 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,10 @@ void	free_mat(char **mat)
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
-	if(!stack)
+
+	if (!stack)
 		return ;
-	while(stack)
+	while (stack)
 	{
 		tmp = *stack->next;
 		free(*stack);
@@ -55,12 +56,12 @@ void	free_stack(t_node **stack)
 	*stack = NULL;
 }
 
-int		count_matlen(char **mat)
+int	count_matlen(char **mat)
 {
-	int len;
+	int	len;
 
 	len = 0;
-	while(mat[i])
+	while (mat[i])
 		len++;
 	return (len);
 }

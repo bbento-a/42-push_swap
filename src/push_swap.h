@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 15:02:32 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:43:43 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void		append_node(t_node **stack, int n);
 void		initialize_stack(t_node **a, char **argv);
 //	stack_utils.c
 long		ft_atol(char *str);
-
+int			ft_stacklen(t_node **stack);
+int			ft_stacksorted(t_node *stack);
 //
 // Error checkers and Free Functions
 //
@@ -71,7 +72,7 @@ int			count_matlen(char **mat);
 // 
 
 //	moves_push.c
-static void	push(t_node **stacksrc, t_node **stackdest)
+static void	push(t_node **stacksrc, t_node **stackdest);
 void		pa(t_node **b, t_node **a);
 void		pb(t_node **a, t_node **b);
 

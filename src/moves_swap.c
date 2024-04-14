@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:57:33 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 15:31:02 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:40:35 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	swap(t_node **ptr)
 {
-	int len;
+	int	len;
 
 	len = stack_len(*ptr);
 	if (len < 2 || !*ptr || !ptr)

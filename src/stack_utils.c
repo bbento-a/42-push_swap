@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:04:20 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 15:43:29 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:45:12 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ long	ft_atol(char *str)
 }
 
 //	Function that counts how many nodes are there in the stack
-int		ft_stacklen(t_node *stack)
+int	ft_stacklen(t_node *stack)
 {
 	int	len;
 
@@ -52,4 +52,18 @@ int		ft_stacklen(t_node *stack)
 		len++;
 	}
 	return (len);
+}
+
+//	Function to check if stack is sorted
+int	ft_stacksorted(t_node *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (1);
+		*stack = stack->next;
+	}
+	return (0);
 }
