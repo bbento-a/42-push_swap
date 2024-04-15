@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 20:43:43 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:51:32 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,13 @@ void		sa(t_node **a);
 void		sb(t_node **b);
 void		ss(t_node **a, t_node **b);
 
+//
+// Sorting algorithms
+//
+
+//	sort_main.c
+
+//	sort_small.c
+void		three_sort(t_node **stack);
+void		five_sort(t_node **stack);
 #endif

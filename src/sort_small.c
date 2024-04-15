@@ -1,37 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_ps.c                                          :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/26 14:59:23 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/15 11:47:06 by bbento-a         ###   ########.fr       */
+/*   Created: 2024/04/15 11:13:19 by bbento-a          #+#    #+#             */
+/*   Updated: 2024/04/15 11:13:45 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	main(int argc, char **argv)
-{
-	t_stack_node	*a;
-	t_stack_node	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
-		return (1);
-	if (argc == 2)
-		ft_split(argv, ' ');
-	initialize_stack(a, **argv);
-	if (!ft_stacksort(a))
-	{
-		if(ft_stacklen(a) == 2)
-			sa(a);
-		else if(ft_stacklen(a) == 3)
-			three_sort(a);
-		else
-			main_sort(a, b);
-	}
-	return (0);
-}
