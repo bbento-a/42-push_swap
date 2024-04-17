@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:13:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/15 19:02:48 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/17 11:55:31 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	three_sort(t_node **stack)
 t_node	find_highest(t_node *stack)
 {
 	t_node	*highestval;
-	int		check_highest;
+	long	check_highest;
 
 	if (!stack)
 		return (NULL);
@@ -43,4 +43,24 @@ t_node	find_highest(t_node *stack)
 		stack = stack->next;
 	}
 	return (highestval);
+}
+
+t_node	find_smallest(t_node *stack)
+{
+	t_node	*smallestval;
+	long	check_smallest;
+
+	if (!stack)
+		return (NULL);
+	check_smallest = INT_MAX;
+	while (stack)
+	{
+		if (stack->value < check_smallest)
+		{
+			smallestval = stack;
+			check_smallest = stack->value;
+		}
+		stack = stack->next;
+	}
+	return (smallestval);
 }
