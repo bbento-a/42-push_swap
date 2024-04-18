@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 19:36:08 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/03 10:32:19 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:52:11 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split_arg(char *arg, char sep)
 		slen = ft_wordsize(arg, sep, i);
 		res[count] = ft_substr(arg, i, slen);
 		if (!res[count])
-			ft_free(res, count);
+			ft_free_arg(res, count);
 		count++;
 		i += slen;
 	}
