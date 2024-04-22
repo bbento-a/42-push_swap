@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:04:20 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 20:45:12 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/22 16:42:24 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_stacklen(t_node *stack)
 }
 
 //	Function to check if stack is sorted
-int	ft_stacksorted(t_node *stack)
+int		ft_stacksorted(t_node *stack)
 {
 	if (!stack)
 		return (1);
@@ -66,4 +66,17 @@ int	ft_stacksorted(t_node *stack)
 		*stack = stack->next;
 	}
 	return (0);
+}
+
+t_node	*return_cheapest(t_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (*stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }

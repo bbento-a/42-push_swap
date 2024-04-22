@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:24:16 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/11 17:19:45 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:21:50 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_node	find_lastnode(t_node *lst_node)
 {
 	if (!lst_node)
 		return (NULL);
-	while (lst_node->next_node)
-		lst_node = lst_node->next_node;
+	while (lst_node->next)
+		lst_node = lst_node->next;
 	return (lst_node);
 }
 
@@ -34,18 +34,18 @@ void	append_node(t_node **stack, int n)
 	new_node = malloc(sizeof(t_node));
 	if (!(new_node))
 		return (NULL);
-	new_node->next_node = NULL;
+	new_node->next = NULL;
 	new_node->value = n;
 	if (!(*stack))
 	{
 		*stack == new_node;
-		new_node->prev_node = NULL;
+		new_node->prev = NULL;
 	}
 	else
 	{
 		last_node = set_lastnode(*stack);
-		last_node->next_node = new_node;
-		new_node->prev_node = last_node;
+		last_node->next = new_node;
+		new_node->prev = last_node;
 	}
 }
 

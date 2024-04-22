@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:45:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/22 12:16:49 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:40:54 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,11 +72,41 @@ void	set_targetnode(t_node *a, t_node *b)
 // Defines the push price of each node according to their position in the stack
 void	set_price(t_node *a, t_node *b)
 {
+	int	len_a;
+	int	len_b;
 
+	len_a = ft_stacklen(a);
+	len_b = ft_stacklen(b);
+	while (b)
+	{
+		b->price = b->index;
+		if (!(b->above_median))
+			b->price = len_b - (b->index);
+		if (b->target_node->above_median)
+			b->price += b->target_node->index;
+		else
+			b->price += len_a - (b->target_node->index);
+		b = b->next;
+	}
 }
 
 // Flags the best case to execute (best node to push)
 void	set_cheapest(t_node *b)
 {
+	t_node	*best_case;
+	long	bestcase_val;
 
+	if (!b)
+		return ;
+	bestcase_val = LONG_MAX;
+	while (b)
+	{
+		if (b->price < bestcase_val)
+		{
+			bestcase_val = b->price;
+			best_case = b;
+		}
+		b = b->next;
+	}
+	best_case->cheapest = true;
 }
