@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/18 12:37:07 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/22 12:35:48 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_stack_node
 	struct s_stack_node		*next_node;
 	struct s_stack_node		*prev_node;
 	//	Algoritm related data
-	int						current_position;
 	int						index;
 	int						price;
 	bool					above_median;
@@ -113,4 +112,11 @@ void		sort_main(t_node **a, t_node **b);
 void		three_sort(t_node **stack);
 void		find_highest(t_node *stack);
 void		find_smallest(t_node *stack);
+
+//	sort_values.c
+void		set_sortvals(t_node *a, t_node *b);
+void		set_nodeindex(t_node *stack);
+void		set_targetnode(t_node *a, t_node *b);
+void		set_price(t_node *a, t_node *b);
+void		set_cheapest(t_node *b);
 #endif
