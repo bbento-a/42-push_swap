@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/22 17:28:37 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:11:50 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,16 @@
 # include <string.h>
 # include <stdbool.h>
 
-typedef struct s_stack_node
+typedef struct s_node
 {
 	int						value;
-	struct s_stack_node		*next;
-	struct s_stack_node		*prev;
-	//	Algoritm related data
+	struct s_node			*next;
+	struct s_node			*prev;
 	int						index;
 	int						price;
 	bool					above_median;
 	bool					cheapest;
-	struct s_stack_node		*target_node;
+	struct s_node			*target_node;
 }	t_node;
 
 //
