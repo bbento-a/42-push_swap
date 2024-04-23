@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 10:55:46 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/12/28 18:46:19 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:10:26 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
+# include "libft.h"
 
 // MAIN FUNCTIONS
 int	ft_printf(const char *s, ...);

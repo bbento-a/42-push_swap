@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:40:14 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 15:56:22 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:18:15 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static void	rotate(t_node **stack)
 		return ;
 	lastnode = find_lastnode(*stack);
 	lastnode->next = *stack;
-	*stack = *stack->next;
-	*stack->prev = NULL;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 	lastnode->next->prev = lastnode;
 	lastnode->next->next = NULL;
 }
@@ -31,18 +31,18 @@ static void	rotate(t_node **stack)
 void	ra(t_node **a)
 {
 	rotate(a);
-	ft_printf("ra\n");
+	write(1, "ra\n", 3);
 }
 
 void	rb(t_node **b)
 {
 	rotate(b);
-	ft_printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 void	rr(t_node **a, t_node **b)
 {
 	rotate(a);
 	rotate(b);
-	ft_printf("rr\n");
+	write(1, "rr\n", 3);
 }

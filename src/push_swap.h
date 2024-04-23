@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/22 20:11:50 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 23:03:20 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <stdbool.h>
+# include <limits.h>
 
 typedef struct s_node
 {
@@ -51,13 +52,14 @@ char		**ft_split_arg(char *arg, char sep);
 //
 
 //	stack_start.c
-t_node		find_lastnode(t_node *lst_node);
+t_node		*find_lastnode(t_node *lst_node);
 void		append_node(t_node **stack, int n);
 void		initialize_stack(t_node **a, char **argv);
 //	stack_utils.c
 long		ft_atol(char *str);
 int			ft_stacklen(t_node *stack);
 int			ft_stacksorted(t_node *stack);
+t_node		*return_cheapest(t_node *stack);
 //
 // Error checkers and Free Functions
 //
@@ -102,14 +104,14 @@ void		ss(t_node **a, t_node **b);
 //	sort_main.c
 void		main_sort(t_node **a, t_node **b);
 void		move_nodes(t_node **a, t_node **b);
-void		rotate_ab(t_node **a, t_node **b);
-void		rev_rotate_ab(t_node **a, t_node **b);
+void		rotate_ab(t_node **a, t_node **b, t_node *cheapest);
+void		rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest);
 void		finish_rotate(t_node **stack, t_node *top_node, char name);
 
 //	sort_small.c
 void		three_sort(t_node **stack);
-void		find_highest(t_node *stack);
-void		find_smallest(t_node *stack);
+t_node		*find_highest(t_node *stack);
+t_node		*find_smallest(t_node *stack);
 
 //	sort_values.c
 void		set_sortvals(t_node *a, t_node *b);

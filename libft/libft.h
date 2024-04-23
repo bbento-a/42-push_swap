@@ -6,7 +6,7 @@
 /*   By: bbento-a <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 14:51:29 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/11/10 12:33:19 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:10:51 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <limits.h>
+# include "printf.h"
 
 //Part 1
 int		ft_isalpha(int c);

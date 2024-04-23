@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 14:19:45 by bbento-a          #+#    #+#              #
-#    Updated: 2024/04/22 18:58:56 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/04/23 23:37:32 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ start:
 					@make all
 
 $(LIBFT):
-					@make -C ./libft
+					make -C ./libft
 
 all: 				$(NAME)
 

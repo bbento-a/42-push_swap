@@ -1,13 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/10 14:48:22 by bbento-a          #+#    #+#              #
-#    Updated: 2023/11/10 16:31:50 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/04/23 17:15:02 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +29,7 @@ OBJECTS = $(SRC:.c=.o)
 BONUS_OBJECTS = $(BONUS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -std=c99
+CFLAGS = -Wall -Werror -Wextra -fPIC
 
 
 all: $(NAME)

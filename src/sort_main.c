@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:16:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/22 17:26:13 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:38:08 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ void	main_sort(t_node **a, t_node **b)
 	while (a_len > 3)
 	{
 		pb(b, a);
-		stack_len--;
+		a_len--;
 	}
-	tiny_sort(a);
+	three_sort(a);
 	while (*b) // Here's where we're going to sort the whole stack
 	{
 		set_sortvals(*a, *b); // setting all values and positions to the nodes;
 		move_nodes(a , b); // here is where we actually move the nodes, according to their sort values
 		// we repeat this process until we have no nodes in stack b
 	}
-	set_current_position(*a);
+	set_nodeindex(*a);
 	smallest_node = find_smallest(*a);
-	if (smallest->above_median)
-		while (*a != smallest)
+	if (smallest_node->above_median)
+		while (*a != smallest_node)
 			ra(a);
 	else
-		while (*a != smallest)
+		while (*a != smallest_node)
 			rra(a);
 }
 

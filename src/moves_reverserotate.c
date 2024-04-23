@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:02:41 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 18:50:45 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:14:07 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,24 @@ static void	reverserotate(t_node **stack)
 	lastnode->prev->next = NULL;
 	lastnode->next = *stack;
 	lastnode->prev = NULL;
-	*stack = last;
+	*stack = lastnode;
 	lastnode->next->prev = lastnode;
 }
 
 void	rra(t_node **a)
 {
 	reverserotate(a);
-	ft_printf("rra\n");
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b)
 {
 	reverserotate(b);
-	ft_printf("rrb\n");
-}
+	write(1, "rrb\n", 4);}
 
 void	rrr(t_node **a, t_node **b)
 {
 	reverserotate(a);
 	reverserotate(b);
-	ft_printf("rrr\n");
+	write(1, "rrr\n", 4);
 }

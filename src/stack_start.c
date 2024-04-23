@@ -6,14 +6,14 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 14:24:16 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/22 15:21:50 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:16:13 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // This function is going to find the last node of the linked list
-t_node	find_lastnode(t_node *lst_node)
+t_node	*find_lastnode(t_node *lst_node)
 {
 	if (!lst_node)
 		return (NULL);
