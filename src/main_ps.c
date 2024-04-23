@@ -14,24 +14,24 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	t_node	*a;
+	t_node	*b;
 
 	a = NULL;
 	b = NULL;
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (1);
 	if (argc == 2)
-		ft_split(argv, ' ');
-	initialize_stack(a, **argv);
-	if (!ft_stacksort(a))
+		argv = ft_split_arg(argv[1], ' ');
+	initialize_stack(&a, **argv);
+	if (!(ft_stacksorted(a)))
 	{
 		if(ft_stacklen(a) == 2)
-			sa(a);
+			sa(&a);
 		else if(ft_stacklen(a) == 3)
-			three_sort(a);
+			three_sort(&a);
 		else
-			main_sort(a, b);
+			main_sort(&a, &b);
 	}
 	return (0);
 }

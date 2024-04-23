@@ -75,7 +75,7 @@ t_node	*return_cheapest(t_node *stack)
 	while (stack)
 	{
 		if (stack->cheapest)
-			return (*stack);
+			return (stack);
 		stack = stack->next;
 	}
 	return (NULL);

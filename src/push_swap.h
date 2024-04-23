@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <stdio.h>
@@ -43,8 +43,7 @@ int			main(int argc, char **argv);
 //
 
 //	split.c
-static int	ft_wordsize(char *s, char c, int i);
-static int	ft_wordcount(char *s, char c);
+
 char		**ft_split_arg(char *arg, char sep);
 
 //
@@ -57,7 +56,7 @@ void		append_node(t_node **stack, int n);
 void		initialize_stack(t_node **a, char **argv);
 //	stack_utils.c
 long		ft_atol(char *str);
-int			ft_stacklen(t_node **stack);
+int			ft_stacklen(t_node *stack);
 int			ft_stacksorted(t_node *stack);
 //
 // Error checkers and Free Functions
@@ -68,7 +67,7 @@ int			syntax_checker(char *argv);
 int			duplicate_checker(t_node *a, int n);
 void		error_free(t_node **stack, char **mat);
 //	free_mem.c 
-int			ft_free_arg(char **arg, int count);
+char		**ft_free_arg(char **arg, int count);
 void		free_mat(char **mat);
 void		free_stack(t_node **stack);
 int			count_matlen(char **mat);
@@ -78,24 +77,20 @@ int			count_matlen(char **mat);
 // 
 
 //	moves_push.c
-static void	push(t_node **stacksrc, t_node **stackdest);
 void		pa(t_node **b, t_node **a);
 void		pb(t_node **a, t_node **b);
 
 //	moves_reverserotate.c
-static void	reverserotate(t_node **stack);
 void		rra(t_node **a);
 void		rrb(t_node **b);
 void		rrr(t_node **a, t_node **b);
 
 //	moves_rotate.c
-static void	rotate(t_node **stack);
 void		ra(t_node **a);
 void		rb(t_node **b);
 void		rr(t_node **a, t_node **b);
 
 //	moves_swap.c
-static void	swap(t_node **ptr);
 void		sa(t_node **a);
 void		sb(t_node **b);
 void		ss(t_node **a, t_node **b);
@@ -105,7 +100,7 @@ void		ss(t_node **a, t_node **b);
 //
 
 //	sort_main.c
-void		sort_main(t_node **a, t_node **b);
+void		main_sort(t_node **a, t_node **b);
 void		move_nodes(t_node **a, t_node **b);
 void		rotate_ab(t_node **a, t_node **b);
 void		rev_rotate_ab(t_node **a, t_node **b);

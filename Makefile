@@ -10,54 +10,68 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME				= push_swap
 
-SRCS_FILES = main_ps.c \
-			 error_checker.c\
-			 free_mem.c\
-			 moves_push.c\
-			 moves_reverserotate.c\
-			 moves_rotate.c\
-			 moves_swap.c\
-			 sort_main.c\
-			 sort_small.c\
-			 sort_values.c\
-			 split.c\
-			 stack_start.c\
-			 stack_utils.c\
+# Directories
+LIBFT				= ./libft/libft.a
+INC					= inc/
+SRC_DIR				= src/
+OBJ_DIR				= obj/
 
-SRCS = $(addprefix src/, $(SRCS_FILES))
+# Compiler and CFlags
+CC					= cc
+CFLAGS				= -Wall -Werror -Wextra -I
+RM					= rm -f
 
-OBJS_DIR = obj/
-OBJS = $(addprefix $(OBJS_DIR)/, $(SRCS:src/%.c=%.o))
+# Source Files
 
-LIBFT_PATH = ./libft
-LIBFT = $(LIBFT_PATH)/libft.a
+PUSH_SWAP_DIR		=	$(SRC_DIR)error_checker.c \
+						$(SRC_DIR)free_mem.c \
+						$(SRC_DIR)main_ps.c \
+						$(SRC_DIR)moves_push.c \
+						$(SRC_DIR)moves_reverserotate.c \
+						$(SRC_DIR)moves_rotate.c \
+						$(SRC_DIR)moves_swap.c \
+						$(SRC_DIR)sort_main.c \
+						$(SRC_DIR)sort_small.c \
+						$(SRC_DIR)sort_values.c \
+						$(SRC_DIR)split.c \
+						$(SRC_DIR)stack_start.c \
+						$(SRC_DIR)stack_utils.c \
 
-CC = cc
-CCFLAGS = -Wall -Wextra -Werror -I
-RM = rm -f
+# Concatenate all source files
+SRCS 				=  $(PUSH_SWAP_DIR)
 
+# Apply the pattern substitution to each source file in SRC and produce a corresponding list of object files in the OBJ_DIR
+OBJ 				= $(patsubst $(SRC_DIR)%.c,$(OBJ_DIR)%.o,$(SRCS))
 
-all: $(NAME)
+# Build rules
+start:				
+					@make all
 
-$(NAME): $(OBJS) $(LIBFT)
-		$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
+$(LIBFT):
+					@make -C ./libft
 
-$(OBJS): $(SRCS)
-	mkdir -p $(OBJS_DIR)
-	$(CC) $(CCFLAGS) $(SRCS) -c
+all: 				$(NAME)
 
-$(LIBFT) :
-	make -C $(LIBFT_PATH) all
+$(NAME): 			$(OBJ) $(LIBFT)
+					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
 
+# Compile object files from source files
+$(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
+					@mkdir -p $(@D)
+					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
-clean: $(RM) *.o
+clean:
+					@$(RM) -r $(OBJ_DIR)
+					@make clean -C ./libft
 
-fclean: clean
-		$(RM) $(NAME)
-		rmdir $(OBJS_DIR)
+fclean: 			clean
+					@$(RM) $(NAME)
+					@$(RM) $(LIBFT)
 
-re: fclean all
+re: 				fclean all
 
-.PHONY: all clean fclean re
+# Phony targets represent actions not files
+.PHONY: 			start all clean fclean re
+

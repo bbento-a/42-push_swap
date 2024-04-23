@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_main(t_node **a, t_node **b)
+void	main_sort(t_node **a, t_node **b)
 {
 	t_node	*smallest_node;
 	int		a_len;

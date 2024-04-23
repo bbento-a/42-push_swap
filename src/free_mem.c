@@ -14,7 +14,7 @@
 
 //	Function to free the memory allocated of an argument,
 //	in case of unexpected behavior
-int	ft_free_arg(char **arg, int count)
+char	**ft_free_arg(char **arg, int count)
 {
 	int	i;
 
@@ -44,14 +44,16 @@ void	free_mat(char **mat)
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
+	t_node 	*current;
 
 	if (!stack)
 		return ;
-	while (stack)
+	current = *stack;
+	while (current)
 	{
-		tmp = *stack->next;
-		free(*stack);
-		*stack = tmp;
+		tmp = current->next;
+		free(current);
+		current = tmp;
 	}
 	*stack = NULL;
 }
@@ -61,7 +63,7 @@ int	count_matlen(char **mat)
 	int	len;
 
 	len = 0;
-	while (mat[i])
+	while (mat[len])
 		len++;
 	return (len);
 }

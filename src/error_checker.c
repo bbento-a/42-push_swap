@@ -12,6 +12,7 @@
 
 #include "push_swap.h"
 
+
 // Here we check for any syntax errors. There can't be any other characters
 // besides numbers, and one - or + symbols before the value
 int	syntax_checker(char *argv)
@@ -22,7 +23,7 @@ int	syntax_checker(char *argv)
 	if (!(argv[0] == '-' || argv [0] == '+'
 			|| (argv[0] >= '0' && argv[0] <= '9')))
 		return (1);
-	if (argv[0] == '-' || argv[0] == '+'
+	if ((argv[0] == '-' || argv[0] == '+')
 		&& (argv[1] < '0' && argv[1] > '9'))
 		return (1);
 	while (argv[++i])
@@ -53,6 +54,6 @@ void	error_free(t_node **stack, char **mat)
 {
 	free_stack(stack);
 	free_mat(mat);
-	ft_printf("Error\n");
+	write(1, "Error\n", 6);
 	exit(1);
 }
