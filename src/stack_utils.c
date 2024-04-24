@@ -63,7 +63,7 @@ int		ft_stacksorted(t_node *stack)
 	{
 		if (stack->value > stack->next->value)
 			return (1);
-		*stack = stack->next;
+		stack = stack->next;
 	}
 	return (0);
 }

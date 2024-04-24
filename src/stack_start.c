@@ -30,20 +30,20 @@ void	append_node(t_node **stack, int n)
 	t_node	*last_node;
 
 	if (!(stack))
-		return (NULL);
+		return ;
 	new_node = malloc(sizeof(t_node));
 	if (!(new_node))
-		return (NULL);
+		return ;
 	new_node->next = NULL;
 	new_node->value = n;
 	if (!(*stack))
 	{
-		*stack == new_node;
+		*stack = new_node;
 		new_node->prev = NULL;
 	}
 	else
 	{
-		last_node = set_lastnode(*stack);
+		last_node = find_lastnode(*stack);
 		last_node->next = new_node;
 		new_node->prev = last_node;
 	}
@@ -55,16 +55,22 @@ void	initialize_stack(t_node **a, char **argv)
 	long	n;
 	int		i;
 
+	i = 0;
+	printf("sim");
 	while (argv[i])
 	{
+		printf("sim1");
 		if (syntax_checker(argv[i]))
 			return (error_free(a, argv));
+		printf("sim1.1");
 		n = ft_atol(argv[i]);
 		if (n < INT_MIN || n > INT_MAX)
 			return (error_free(a, argv));
 		if (duplicate_checker(*a, (int)n))
 			return (error_free(a, argv));
 		append_node(a, (int)n);
+		printf("sim2");
 		i++;
 	}
+	printf("sim3");
 }

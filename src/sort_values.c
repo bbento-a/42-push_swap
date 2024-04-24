@@ -27,6 +27,7 @@ void	set_nodeindex(t_node *stack)
 	int	i;
 	int	middle;
 
+	i = 0;
 	middle = ft_stacklen(stack);
 	while (stack)
 	{
@@ -62,9 +63,9 @@ void	set_targetnode(t_node *a, t_node *b)
 			current_a = current_a->next;
 		}
 		if (best_index == LONG_MAX)
-			b->target_note = find_smallest(a);
+			b->target_node = find_smallest(a);
 		else
-			b->target_note = target_node;
+			b->target_node = target_node;
 		b = b->next;
 	}
 }

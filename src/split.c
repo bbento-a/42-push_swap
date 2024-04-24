@@ -53,19 +53,19 @@ static int	ft_wordcount(char *s, char c)
 //	individual argument inside of an array of arguments
 char	**ft_split_arg(char *arg, char sep)
 {
-	char	**res;
-	int		count;
-	int		slen;
-	int		i;
+	char			**res;
+	int				count;
+	size_t			slen;
+	unsigned int	i;
 
 	i = 0;
 	count = 0;
 	res = malloc(ft_wordcount(arg, sep) + 1 * sizeof(char *));
 	if (!arg || !res)
 		return (NULL);
-	while (count < ft_wordcount(arg, i, slen))
+	while (count < ft_wordcount(arg, i))
 	{
-		while (s[i] == sep)
+		while (arg[i] == sep)
 			i++;
 		slen = ft_wordsize(arg, sep, i);
 		res[count] = ft_substr(arg, i, slen);
