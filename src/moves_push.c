@@ -39,11 +39,11 @@ static void	push(t_node **stacksrc, t_node **stackdest)
 void	pa(t_node **b, t_node **a)
 {
 	push(b, a);
-	write(1, "pa\n", 3);
+	printf("pa\n");
 }
 
 void	pb(t_node **a, t_node **b)
 {
 	push(a, b);
-	write(1, "pb\n", 3);
+	printf("pb\n");
 }

@@ -35,10 +35,10 @@ CFLAGS = -Wall -Werror -Wextra -fPIC
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-		ar rcs $(NAME) $(OBJECTS)
+		@ar rcs $(NAME) $(OBJECTS)
 
 bonus: $(BONUS_OBJECTS)
-		ar rcs  $(NAME) $(BONUS_OBJECTS)
+		@ar rcs  $(NAME) $(BONUS_OBJECTS)
 
 clean:
 	rm -f *.o

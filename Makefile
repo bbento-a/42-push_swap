@@ -50,7 +50,7 @@ start:
 					@make all
 
 $(LIBFT):
-					make -C ./libft
+					@make -C ./libft
 
 all: 				$(NAME)
 

@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	initialize_stack(&a, argv);
-	printf("nao0");
 	if (!(ft_stacksorted(a)))
 	{
 		if(ft_stacklen(a) == 2)
@@ -34,9 +33,8 @@ int	main(int argc, char **argv)
 		else
 			main_sort(&a, &b);
 	}
-	printf("nao00");
 	free_mat(argv);
-	printf("nao000");
+	free_stack(&a);
 	return (0);
 }
 

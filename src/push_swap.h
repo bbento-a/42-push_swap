@@ -20,6 +20,7 @@
 # include <stdbool.h>
 # include <limits.h>
 # include "../libft/libft.h"
+# include "../libft/ft_printf.h"
 
 typedef struct s_node
 {
@@ -59,7 +60,7 @@ void		initialize_stack(t_node **a, char **argv);
 //	stack_utils.c
 long		ft_atol(char *str);
 int			ft_stacklen(t_node *stack);
-int			ft_stacksorted(t_node *stack);
+bool		ft_stacksorted(t_node *stack);
 t_node		*return_cheapest(t_node *stack);
 //
 // Error checkers and Free Functions

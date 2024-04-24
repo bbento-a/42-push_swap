@@ -55,17 +55,17 @@ int	ft_stacklen(t_node *stack)
 }
 
 //	Function to check if stack is sorted
-int		ft_stacksorted(t_node *stack)
+bool	ft_stacksorted(t_node *stack)
 {
 	if (!stack)
 		return (1);
 	while (stack->next)
 	{
 		if (stack->value > stack->next->value)
-			return (1);
+			return (false);
 		stack = stack->next;
 	}
-	return (0);
+	return (true);
 }
 
 t_node	*return_cheapest(t_node *stack)
