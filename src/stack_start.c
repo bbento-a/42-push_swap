@@ -52,7 +52,7 @@ void	append_node(t_node **stack, int n)
 // This function will iterate all arguments and append the value to a new node
 void	initialize_stack(t_node **a, char **argv)
 {
-	long	n;
+	long	n = 0;
 	int		i;
 
 	i = 0;

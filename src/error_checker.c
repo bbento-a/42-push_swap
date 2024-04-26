@@ -52,8 +52,9 @@ int	duplicate_checker(t_node *a, int n)
 //	write a error message so the user understands something unexpected happened
 void	error_free(t_node **stack, char **mat)
 {
+	(void)mat;
 	free_stack(stack);
-	free_mat(mat);
+	// free_mat(mat);
 	write(1, "Error\n", 6);
 	exit(1);
 }

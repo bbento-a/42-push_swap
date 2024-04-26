@@ -13,11 +13,11 @@
 #include "push_swap.h"
 
 // Function that converts str to long (to avoid overflow when inserting params.)
-long	ft_atol(char *str)
+long ft_atol(char *str)
 {
-	long	res;
-	int		sign;
-	int		i;
+	long res;
+	int sign;
+	int i;
 
 	res = 0;
 	sign = 1;
@@ -39,12 +39,14 @@ long	ft_atol(char *str)
 }
 
 //	Function that counts how many nodes are there in the stack
-int	ft_stacklen(t_node *stack)
+int ft_stacklen(t_node *stack)
 {
-	int	len;
+	int len;
 
 	if (!stack)
+	{
 		return (0);
+	}
 	len = 0;
 	while (stack)
 	{
@@ -55,7 +57,7 @@ int	ft_stacklen(t_node *stack)
 }
 
 //	Function to check if stack is sorted
-bool	ft_stacksorted(t_node *stack)
+bool ft_stacksorted(t_node *stack)
 {
 	if (!stack)
 		return (1);
@@ -68,7 +70,7 @@ bool	ft_stacksorted(t_node *stack)
 	return (true);
 }
 
-t_node	*return_cheapest(t_node *stack)
+t_node *return_cheapest(t_node *stack)
 {
 	if (!stack)
 		return (NULL);

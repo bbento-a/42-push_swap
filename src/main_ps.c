@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_node	*a;
-	t_node	*b;
+	t_node *a;
+	t_node *b;
 
 	a = NULL;
 	b = NULL;
@@ -23,18 +23,21 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
+	if (argc > 2)
+		argv = &argv[1];
 	initialize_stack(&a, argv);
 	if (!(ft_stacksorted(a)))
 	{
-		if(ft_stacklen(a) == 2)
+		if (ft_stacklen(a) == 2)
 			sa(&a);
-		else if(ft_stacklen(a) == 3)
+		else if (ft_stacklen(a) == 3)
+		{
 			three_sort(&a);
-		else
+		}
+		else if( ft_stacklen(a) != 2 && ft_stacklen(a) != 3)
 			main_sort(&a, &b);
 	}
-	free_mat(argv);
+	// free_mat(argv);
 	free_stack(&a);
 	return (0);
 }
-
