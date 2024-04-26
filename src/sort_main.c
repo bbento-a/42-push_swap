@@ -20,7 +20,7 @@ void	main_sort(t_node **a, t_node **b)
 	a_len = ft_stacklen(*a);
 	while (a_len > 3)
 	{
-		pb(b, a);
+		pb(a, b);
 		a_len--;
 	}
 	three_sort(a);
@@ -49,15 +49,15 @@ void	move_nodes(t_node **a, t_node **b)
 		rotate_ab(a, b, cheapest);
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
 		rev_rotate_ab(a, b, cheapest);
-	finish_rotate(a, cheapest, 'a');
+	finish_rotate(a, cheapest->target_node, 'a');
 	finish_rotate(b, cheapest, 'b');
-	pa(a, b);
+	pa(b, a);
 }
 
 // We're going to rotate both stacks until target/cheapest is on top
 void	rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 {
-	while (*a != cheapest && *b != cheapest)
+	while (*a != cheapest->target_node && *b != cheapest)
 		rr(a, b);
 	set_nodeindex(*a);
 	set_nodeindex(*b);
@@ -66,7 +66,7 @@ void	rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 // Same as before but reverse rotate
 void	rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 {
-	while (*a != cheapest && *b != cheapest)
+	while (*a != cheapest->target_node && *b != cheapest)
 		rrr(a, b);
 	set_nodeindex(*a);
 	set_nodeindex(*b);
