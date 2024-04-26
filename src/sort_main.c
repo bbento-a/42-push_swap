@@ -21,7 +21,7 @@ void main_sort(t_node **a, t_node **b)
 	a_len = ft_stacklen(*a);
 	// write(1, "test\n", 5);
 
-	fprintf(stderr, "Lengh: %d\n", a_len);
+	// fprintf(stderr, "Lengh: %d\n", a_len);
 	while (a_len > 3)
 	{
 		pb(a, b);
@@ -34,23 +34,14 @@ void main_sort(t_node **a, t_node **b)
 		move_nodes(a, b);	  // here is where we actually move the nodes, according to their sort values
 							  // we repeat this process until we have no nodes in stack b
 	}
-	// set_nodeindex(*a);
-	// smallest_node = find_smallest(*a);
-	// if (smallest_node->above_median)
-	// 	while (*a != smallest_node)
-	// 	{
-	// 		ra(a);
-	// 	}
-	// else
-	// 	while (*a != smallest_node)
-	// 	{
-	// 		rra(a);
-	// 	}
-
-
-
-
-
+	set_nodeindex(*a);
+	smallest_node = find_smallest(*a);
+	if (smallest_node->above_median)
+		while (*a != smallest_node)
+			ra(a);
+	else
+		while (*a != smallest_node)
+			rra(a);
 }
 
 void move_nodes(t_node **a, t_node **b)
@@ -59,15 +50,11 @@ void move_nodes(t_node **a, t_node **b)
 
 	cheapest = return_cheapest(*b);
 	if (cheapest->above_median && cheapest->target_node->above_median)
-	{
-		// write(1, "Rotate Ab\n", 15);
 		rotate_ab(a, b, cheapest);
-	}
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
-	{
-		// write(1, "REV Rotate Ab\n", 15);
 		rev_rotate_ab(a, b, cheapest);
-	}
+	printf("boolean val of *b: %i\n", (*b)->above_median);
+	printf("boolean val of *a: %i\n", (*a)->above_median);
 	finish_rotate(a, cheapest->target_node, 'a');
 	finish_rotate(b, cheapest, 'b');
 	pa(b, a);

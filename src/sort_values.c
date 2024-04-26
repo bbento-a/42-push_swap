@@ -21,7 +21,7 @@ void	set_sortvals(t_node	*a, t_node *b)
 	set_cheapest(b);
 }
 
-// Defines the current position of each node in the stack
+// Defines the current position of each node in the stack and bool above_median
 void	set_nodeindex(t_node *stack)
 {
 	int	i;
@@ -33,9 +33,16 @@ void	set_nodeindex(t_node *stack)
 	{
 		stack->index = i;
 		if (stack->index <= middle)
+		{
 			stack->above_median = true;
+			printf("boolean val of *stack: %i\n", stack->above_median);
+		}
 		else
+		{
 			stack->above_median = false;
+			printf("boolean val of *stack: %i\n", stack->above_median);
+		}
+		printf("%d %d\n", middle, stack->index);
 		stack = stack->next;
 		i++;
 	}
@@ -81,12 +88,12 @@ void	set_price(t_node *a, t_node *b)
 	while (b)
 	{
 		b->price = b->index;
-		if (!(b->above_median))
+		if (!(b->above_median))  // Defines prices if b node's below median
 			b->price = len_b - (b->index);
-		if (b->target_node->above_median)
+		if (b->target_node->above_median) // Adds cost to this node through by its target node if above median (in a stack) 
 			b->price += b->target_node->index;
 		else
-			b->price += len_a - (b->target_node->index);
+			b->price += len_a - (b->target_node->index); // Adds cost to this node through its target node if under median
 		b = b->next;
 	}
 }
