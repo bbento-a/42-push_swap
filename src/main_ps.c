@@ -23,9 +23,9 @@ int main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	if (argc > 2)
+	else
 		argv = &argv[1];
-	initialize_stack(&a, argv);
+	initialize_stack(&a, argv, argc == 2);
 	if (!(ft_stacksorted(a)))
 	{
 		if (ft_stacklen(a) == 2)
@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 		else if( ft_stacklen(a) != 2 && ft_stacklen(a) != 3)
 			main_sort(&a, &b);
 	}
-	// free_mat(argv);
 	free_stack(&a);
 	return (0);
 }

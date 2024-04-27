@@ -83,20 +83,17 @@ void finish_rotate(t_node **stack, t_node *top_node, char name)
 			if (top_node->above_median)
 				ra(stack);
 			else
+			{
 				rra(stack);
+				ft_printf("node val:%i\n", top_node->value);
+			}
 		}
 		else if (name == 'b')
 		{
 			if (top_node->above_median)
-			{
-				// write(1, "Finish Rotate\n", 10);
 				rb(stack);
-			}
 			else
-			{
-				// write(1, "Finish Rotate\n", 10);
 				rrb(stack);
-			}
 		}
 	}
 }

@@ -51,7 +51,7 @@ void	append_node(t_node **stack, int n)
 }
 
 // This function will iterate all arguments and append the value to a new node
-void	initialize_stack(t_node **a, char **argv)
+void	initialize_stack(t_node **a, char **argv, bool argc_2)
 {
 	long	n = 0;
 	int		i;
@@ -60,12 +60,12 @@ void	initialize_stack(t_node **a, char **argv)
 	while (argv[i])
 	{
 		if (syntax_checker(argv[i]))
-			return (error_free(a, argv));
+			return (error_free(a, argv, argc_2));
 		n = ft_atol(argv[i]);
 		if (n < INT_MIN || n > INT_MAX)
-			return (error_free(a, argv));
+			return (error_free(a, argv, argc_2));
 		if (duplicate_checker(*a, (int)n))
-			return (error_free(a, argv));
+			return (error_free(a, argv, argc_2));
 		append_node(a, (int)n);
 		i++;
 	}

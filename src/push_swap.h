@@ -56,7 +56,7 @@ char		**ft_split_arg(char *arg, char sep);
 //	stack_start.c
 t_node		*find_lastnode(t_node *lst_node);
 void		append_node(t_node **stack, int n);
-void		initialize_stack(t_node **a, char **argv);
+void		initialize_stack(t_node **a, char **argv, bool argc2);
 //	stack_utils.c
 long		ft_atol(char *str);
 int			ft_stacklen(t_node *stack);
@@ -69,7 +69,7 @@ t_node		*return_cheapest(t_node *stack);
 //	error_checker.c
 int			syntax_checker(char *argv);
 int			duplicate_checker(t_node *a, int n);
-void		error_free(t_node **stack, char **mat);
+void		error_free(t_node **stack, char **mat, bool argc_2);
 //	free_mem.c 
 char		**ft_free_arg(char **arg, int count);
 void		free_mat(char **mat);

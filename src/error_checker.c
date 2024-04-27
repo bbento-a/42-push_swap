@@ -50,11 +50,11 @@ int	duplicate_checker(t_node *a, int n)
 
 //	I use this function to free everything allocated before exit the program and
 //	write a error message so the user understands something unexpected happened
-void	error_free(t_node **stack, char **mat)
+void	error_free(t_node **stack, char **mat, bool argc_2)
 {
-	(void)mat;
 	free_stack(stack);
-	// free_mat(mat);
-	write(1, "Error\n", 6);
+	if (argc_2)
+		free_mat(mat);
+	write(2, "Error\n", 6);
 	exit(1);
 }

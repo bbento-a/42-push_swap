@@ -118,4 +118,5 @@ void	set_cheapest(t_node *b)
 		b = b->next;
 	}
 	best_case->cheapest = true;
+	ft_printf("cheapest node val: %i\n", best_case->value);
 }

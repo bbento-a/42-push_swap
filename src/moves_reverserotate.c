@@ -31,7 +31,7 @@ static void	reverserotate(t_node **stack)
 void	rra(t_node **a)
 {
 	reverserotate(a);
-	write(1, "rra\n", 4);
+	// write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b)
