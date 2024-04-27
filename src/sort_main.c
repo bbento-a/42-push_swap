@@ -14,14 +14,10 @@
 
 void main_sort(t_node **a, t_node **b)
 {
-	// printf("%s:%d\n", __func__, __LINE__);
 	t_node *smallest_node;
 	int a_len;
 
 	a_len = ft_stacklen(*a);
-	// write(1, "test\n", 5);
-
-	// fprintf(stderr, "Lengh: %d\n", a_len);
 	while (a_len > 3)
 	{
 		pb(a, b);
@@ -53,8 +49,8 @@ void move_nodes(t_node **a, t_node **b)
 		rotate_ab(a, b, cheapest);
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
 		rev_rotate_ab(a, b, cheapest);
-	printf("boolean val of *b: %i\n", (*b)->above_median);
-	printf("boolean val of *a: %i\n", (*a)->above_median);
+	// printf("boolean val of *b: %i\n", (*b)->above_median);
+	// printf("boolean val of *a: %i\n", (*a)->above_median);
 	finish_rotate(a, cheapest->target_node, 'a');
 	finish_rotate(b, cheapest, 'b');
 	pa(b, a);
