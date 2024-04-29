@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 		else if( ft_stacklen(a) != 2 && ft_stacklen(a) != 3)
 			main_sort(&a, &b);
 	}
+	printf("Is sorted: %d\n", ft_stacksorted(a));
 	free_stack(&a);
 	return (0);
 }

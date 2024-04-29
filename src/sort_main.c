@@ -49,10 +49,14 @@ void move_nodes(t_node **a, t_node **b)
 		rotate_ab(a, b, cheapest);
 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
 		rev_rotate_ab(a, b, cheapest);
-	// printf("boolean val of *b: %i\n", (*b)->above_median);
-	// printf("boolean val of *a: %i\n", (*a)->above_median);
-	finish_rotate(a, cheapest->target_node, 'a');
+	// printf("cheapest node (b): %i\n", cheapest->value);
+	// printf("cheapest node (a): %i\n", cheapest->target_node->value);
+	// printf("stack len b: %d\n", ft_stacklen(*b));
+	// printf("stack len a: %d\n", ft_stacklen(*a));
+	printf("cheapest node position(b): %i\n", cheapest->index);
+	printf("cheapest node position(a): %i\n", cheapest->target_node->index);	
 	finish_rotate(b, cheapest, 'b');
+	finish_rotate(a, cheapest->target_node, 'a');
 	pa(b, a);
 }
 
@@ -74,18 +78,28 @@ void rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 	set_nodeindex(*b);
 }
 
+// Here if one of the nodes (cheapest or target) is on top of one of the stacks,
+// this function will take the one that is not to the top of its stack
 void finish_rotate(t_node **stack, t_node *top_node, char name)
 {
+	printf("AAAAAAAAAAAAA\n");
+	set_nodeindex(*stack);
 	while (*stack != top_node)
 	{
 		if (name == 'a')
 		{
 			if (top_node->above_median)
+			{
 				ra(stack);
+				// ft_printf("RA   stack's index: %i\nstack's val: %i\n", (*stack)->index, (*stack)->value);
+				// ft_printf("RA   cheapest value:%i\ncheapest index: %i\n", top_node->value, top_node->index);	
+			}
 			else
 			{
 				rra(stack);
-				ft_printf("node val:%i\n", top_node->value);
+//				ft_printf("stack len:%i\n", ft_stacklen(*stack));
+				ft_printf("cheapest value:%i\ncheapest index: %i\n", top_node->value, top_node->index);	
+				ft_printf("stack's index: %i\nstack's val: %i\n", (*stack)->index, (*stack)->value);
 			}
 		}
 		else if (name == 'b')

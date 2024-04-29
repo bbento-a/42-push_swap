@@ -33,6 +33,7 @@ void	set_nodeindex(t_node *stack)
 	while (stack)
 	{
 		stack->index = i;
+		// ft_printf("stack's index: %i\nstack's val: %i\n", stack->index, stack->value);
 		if (stack->index <= middle)
 		{
 			stack->above_median = true;
@@ -118,5 +119,5 @@ void	set_cheapest(t_node *b)
 		b = b->next;
 	}
 	best_case->cheapest = true;
-	ft_printf("cheapest node val: %i\n", best_case->value);
+	// ft_printf("cheapest node val: %i\n", best_case->value);
 }
