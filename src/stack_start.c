@@ -36,7 +36,6 @@ void	append_node(t_node **stack, int n)
 		return ;
 	new_node->next = NULL;
 	new_node->value = n;
-	new_node->above_median = false;
 	if (!(*stack))
 	{
 		*stack = new_node;

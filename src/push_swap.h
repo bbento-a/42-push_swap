@@ -38,6 +38,8 @@ typedef struct s_node
 // Main Function
 //
 
+void print_list(t_node **a, char *str); // just to test
+
 //	main_ps.c
 int			main(int argc, char **argv);
 

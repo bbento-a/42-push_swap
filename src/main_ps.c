@@ -26,6 +26,10 @@ int main(int argc, char **argv)
 	else
 		argv = &argv[1];
 	initialize_stack(&a, argv, argc == 2);
+	ft_printf("::::::::::::::::::::::::::::::::\n");
+	print_list(&a, "A");
+	print_list(&b, "B");
+	ft_printf("::::::::::::::::::::::::::::::::\n");
 	if (!(ft_stacksorted(a)))
 	{
 		if (ft_stacklen(a) == 2)

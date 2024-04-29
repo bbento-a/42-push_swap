@@ -12,18 +12,41 @@
 
 #include "push_swap.h"
 
+void print_list(t_node **a, char *str)
+{
+	if (!*a)
+	{
+		ft_printf("Lista: %s is empty\n", str);
+		return;
+	}
+	ft_printf("Lista: %s\n", str);
+	while ((*a)->next != NULL)
+	{
+		ft_printf("[%d]-", (*a)->index);
+		ft_printf("%d\n", (*a)->value);
+		(*a) = (*a)->next;
+	}
+	ft_printf("\n");
+}
+
 void main_sort(t_node **a, t_node **b)
 {
 	t_node *smallest_node;
 	int a_len;
 
 	a_len = ft_stacklen(*a);
+	ft_printf("First Len: %d\n", a_len);
 	while (a_len > 3)
 	{
 		pb(a, b);
 		a_len--;
 	}
 	three_sort(a);
+	ft_printf("=======================================\n");
+	ft_printf("Len: %d\n", a_len);
+	print_list(a, "A");
+	print_list(b, "B");
+	ft_printf("=======================================\n");
 	while (*b) // Here's where we're going to sort the whole stack
 	{
 		set_sortvals(*a, *b); // setting all values and positions to the nodes;
@@ -40,7 +63,7 @@ void main_sort(t_node **a, t_node **b)
 			rra(a);
 }
 
-void move_nodes(t_node **a, t_node **b)
+/* void move_nodes(t_node **a, t_node **b)
 {
 	t_node *cheapest;
 
@@ -58,6 +81,31 @@ void move_nodes(t_node **a, t_node **b)
 	finish_rotate(b, cheapest, 'b');
 	finish_rotate(a, cheapest->target_node, 'a');
 	pa(b, a);
+} */
+
+
+void move_nodes(t_node **a, t_node **b)
+{
+	t_node *cheapest;
+
+	cheapest = return_cheapest(*b);
+	if (cheapest->above_median && cheapest->target_node->above_median)
+		rotate_ab(a, b, cheapest);
+	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+		rev_rotate_ab(a, b, cheapest);
+	ft_printf("-----------------------------------\n");
+	print_list(a, "A");
+	print_list(b, "B");
+	finish_rotate(b, cheapest, 'b');
+	finish_rotate(a, cheapest->target_node, 'a');
+	ft_printf("-----------------------------------\n");
+	print_list(a, "A");
+	print_list(b, "B");
+	ft_printf("-----------------------------------\n");
+	pa(b, a);
+	print_list(a, "A");
+	print_list(b, "B");
+	ft_printf("-----------------------------------\n");
 }
 
 // We're going to rotate both stacks until target/cheapest is on top

@@ -40,10 +40,18 @@ void	pa(t_node **b, t_node **a)
 {
 	push(b, a);
 	write(1, "pa\n", 3);
+	ft_printf("::::::::::::::::::::::::::::::::\n");
+	print_list(a, "A");
+	print_list(b, "B");
+	ft_printf("::::::::::::::::::::::::::::::::\n");
 }
 
 void	pb(t_node **a, t_node **b)
 {
 	push(a, b);
 	write(1, "pb\n", 3);
+	ft_printf("::::::::::::::::::::::::::::::::\n");
+	print_list(a, "A");
+	print_list(b, "B");
+	ft_printf("::::::::::::::::::::::::::::::::\n");
 }
