@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-void print_list(t_node **a, char *str)
-{
-	if (!*a)
-	{
-		ft_printf("Lista: %s is empty\n", str);
-		return;
-	}
-	ft_printf("Lista: %s\n", str);
-	while ((*a)->next != NULL)
-	{
-		ft_printf("[%d]-", (*a)->index);
-		ft_printf("%d\n", (*a)->value);
-		(*a) = (*a)->next;
-	}
-	ft_printf("\n");
-}
-
 void main_sort(t_node **a, t_node **b)
 {
 	t_node *smallest_node;
@@ -42,11 +25,11 @@ void main_sort(t_node **a, t_node **b)
 		a_len--;
 	}
 	three_sort(a);
-	ft_printf("=======================================\n");
-	ft_printf("Len: %d\n", a_len);
-	print_list(a, "A");
-	print_list(b, "B");
-	ft_printf("=======================================\n");
+	// ft_printf("=======================================\n");
+	// ft_printf("Len: %d\n", a_len);
+	// print_list(a, "A");
+	// print_list(b, "B");
+	// ft_printf("=======================================\n");
 	while (*b) // Here's where we're going to sort the whole stack
 	{
 		set_sortvals(*a, *b); // setting all values and positions to the nodes;

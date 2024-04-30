@@ -38,6 +38,7 @@ PUSH_SWAP_DIR		=	$(SRC_DIR)error_checker.c \
 						$(SRC_DIR)split.c \
 						$(SRC_DIR)stack_start.c \
 						$(SRC_DIR)stack_utils.c \
+						$(SRC_DIR)testing_utils.c \
 
 # Concatenate all source files
 SRCS 				=  $(PUSH_SWAP_DIR)
