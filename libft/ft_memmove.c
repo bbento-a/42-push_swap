@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 12:32:41 by bbento-a          #+#    #+#             */
-/*   Updated: 2023/11/16 13:38:16 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:11:40 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(s2, s1, n);
 	return (dest);
 }
-
-/*
-int	main (void)
-{
-	//char	src[] = "Hello";
-	char	dest[] = "world";
-	//printf("%s\n", (char *)memmove((void *)(dest + 2), (void *)(dest + 1), 4));
-	printf("%s\n", (char *)ft_memmove((void *)(dest + 2), (void *)(dest + 1), 4));
-	return (0);
-}
-*/

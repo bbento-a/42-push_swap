@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 14:57:33 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 22:22:32 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:25:18 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	swap(t_node **ptr)
 	*ptr = (*ptr)->next;
 	(*ptr)->prev->prev = *ptr;
 	(*ptr)->prev->next = (*ptr)->next;
-	if (len == 2)
+	if ((*ptr)->next)
 		(*ptr)->next->prev = (*ptr)->prev;
 	(*ptr)->next = (*ptr)->prev;
 	(*ptr)->prev = NULL;

@@ -6,12 +6,11 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:05:38 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 20:47:11 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:31:09 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 // Here we check for any syntax errors. There can't be any other characters
 // besides numbers, and one - or + symbols before the value

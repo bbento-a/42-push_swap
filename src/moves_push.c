@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:00:12 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 17:06:31 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:34:34 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,10 @@ void	pa(t_node **b, t_node **a)
 {
 	push(b, a);
 	write(1, "pa\n", 3);
-	// ft_printf("::::::::::::::::::::::::::::::::\n");
-	// print_list(a, "A");
-	// print_list(b, "B");
-	// ft_printf("::::::::::::::::::::::::::::::::\n");
 }
 
 void	pb(t_node **a, t_node **b)
 {
 	push(a, b);
 	write(1, "pb\n", 3);
-	// ft_printf("::::::::::::::::::::::::::::::::\n");
-	// print_list(a, "A");
-	// print_list(b, "B");
-	// ft_printf("::::::::::::::::::::::::::::::::\n");
 }

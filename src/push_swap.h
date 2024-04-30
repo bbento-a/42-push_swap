@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 23:03:20 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:42:45 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ typedef struct s_node
 // Main Function
 //
 
-void print_list(t_node **a, char *str); // just to test
-
 //	main_ps.c
 int			main(int argc, char **argv);
 
@@ -48,7 +46,6 @@ int			main(int argc, char **argv);
 //
 
 //	split.c
-
 char		**ft_split_arg(char *arg, char sep);
 
 //
@@ -64,6 +61,7 @@ long		ft_atol(char *str);
 int			ft_stacklen(t_node *stack);
 bool		ft_stacksorted(t_node *stack);
 t_node		*return_cheapest(t_node *stack);
+
 //
 // Error checkers and Free Functions
 //
@@ -77,9 +75,6 @@ char		**ft_free_arg(char **arg, int count);
 void		free_mat(char **mat);
 void		free_stack(t_node **stack);
 int			count_matlen(char **mat);
-
-//TEST
-void		init_cheapest(t_node *stack);
 
 //
 // Moves operations
@@ -126,4 +121,14 @@ void		set_nodeindex(t_node *stack);
 void		set_targetnode(t_node *a, t_node *b);
 void		set_price(t_node *a, t_node *b);
 void		set_cheapest(t_node *b);
+
+//
+// Testing Functions
+//
+
+//	testing_utils.c
+
+void		print_list(t_node **a, char *str);
+void		init_cheapest(t_node *stack);
+
 #endif

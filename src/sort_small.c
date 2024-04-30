@@ -6,15 +6,15 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:13:19 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 22:59:10 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:17:53 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void three_sort(t_node **stack)
+void	three_sort(t_node **stack)
 {
-	t_node *highestval;
+	t_node	*highestval;
 
 	highestval = find_highest(*stack);
 	if (*stack == highestval)
@@ -27,10 +27,10 @@ void three_sort(t_node **stack)
 		sa(stack);
 }
 
-t_node *find_highest(t_node *stack)
+t_node	*find_highest(t_node *stack)
 {
-	t_node *highestval;
-	long check_highest;
+	t_node	*highestval;
+	long	check_highest;
 
 	if (!stack)
 		return (NULL);
@@ -47,10 +47,10 @@ t_node *find_highest(t_node *stack)
 	return (highestval);
 }
 
-t_node *find_smallest(t_node *stack)
+t_node	*find_smallest(t_node *stack)
 {
-	t_node *smallestval;
-	long check_smallest;
+	t_node	*smallestval;
+	long	check_smallest;
 
 	if (!stack)
 		return (NULL);

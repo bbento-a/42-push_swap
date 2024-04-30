@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:02:41 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 22:14:07 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:39:07 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	rra(t_node **a)
 void	rrb(t_node **b)
 {
 	reverserotate(b);
-	write(1, "rrb\n", 4);}
+	write(1, "rrb\n", 4);
+}
 
 void	rrr(t_node **a, t_node **b)
 {

@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:45:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/23 23:13:29 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 19:33:40 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,13 @@ void	set_nodeindex(t_node *stack)
 	if (!stack)
 		return ;
 	middle = ft_stacklen(stack) / 2;
-	// printf("middle: %i\n", middle);
 	while (stack)
 	{
 		stack->index = i;
-		// ft_printf("stack's index: %i\nstack's val: %i\n", stack->index, stack->value);
 		if (stack->index <= middle)
-		{
 			stack->above_median = true;
-			// printf("boolean val of *stack: %i\n", stack->above_median);
-		}
 		else
-		{
 			stack->above_median = false;
-			// printf("boolean val of *stack: %i\n", stack->above_median);
-		}
-		// printf("%d %d\n", middle, stack->index);
 		stack = stack->next;
 		i++;
 	}
@@ -66,7 +57,7 @@ void	set_targetnode(t_node *a, t_node *b)
 		while (current_a)
 		{
 			if (current_a->value > b->value
-					&& current_a->value < best_index)
+				&& current_a->value < best_index)
 			{
 				best_index = current_a->value;
 				target_node = current_a;
@@ -121,5 +112,4 @@ void	set_cheapest(t_node *b)
 		b = b->next;
 	}
 	best_case->cheapest = true;
-	// ft_printf("cheapest node val: %i\n", best_case->value);
 }

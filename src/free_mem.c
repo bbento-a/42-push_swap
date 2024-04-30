@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 10:27:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/14 20:48:48 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:31:39 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	free_mat(char **mat)
 void	free_stack(t_node **stack)
 {
 	t_node	*tmp;
-	t_node 	*current;
+	t_node	*current;
 
 	if (!stack)
 		return ;
