@@ -28,6 +28,8 @@ void	set_nodeindex(t_node *stack)
 	int	middle;
 
 	i = 0;
+	if (!stack)
+		return ;
 	middle = ft_stacklen(stack) / 2;
 	// printf("middle: %i\n", middle);
 	while (stack)

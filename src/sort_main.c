@@ -25,11 +25,6 @@ void main_sort(t_node **a, t_node **b)
 		a_len--;
 	}
 	three_sort(a);
-	// ft_printf("=======================================\n");
-	// ft_printf("Len: %d\n", a_len);
-	// print_list(a, "A");
-	// print_list(b, "B");
-	// ft_printf("=======================================\n");
 	while (*b) // Here's where we're going to sort the whole stack
 	{
 		set_sortvals(*a, *b); // setting all values and positions to the nodes;
@@ -46,7 +41,7 @@ void main_sort(t_node **a, t_node **b)
 			rra(a);
 }
 
-/* void move_nodes(t_node **a, t_node **b)
+void move_nodes(t_node **a, t_node **b)
 {
 	t_node *cheapest;
 
@@ -61,35 +56,29 @@ void main_sort(t_node **a, t_node **b)
 	// printf("stack len a: %d\n", ft_stacklen(*a));
 	printf("cheapest node position(b): %i\n", cheapest->index);
 	printf("cheapest node position(a): %i\n", cheapest->target_node->index);	
+	// ft_printf("=======================================\n");
+	// // ft_printf("Len: %d\n", a_len);
+	// print_list(a, "A");
+	// print_list(b, "B");
+	// ft_printf("=======================================\n");
 	finish_rotate(b, cheapest, 'b');
-	finish_rotate(a, cheapest->target_node, 'a');
+	finish_rotate(a, cheapest->target_node, 'a'); // <- the problem
 	pa(b, a);
-} */
-
-
-void move_nodes(t_node **a, t_node **b)
-{
-	t_node *cheapest;
-
-	cheapest = return_cheapest(*b);
-	if (cheapest->above_median && cheapest->target_node->above_median)
-		rotate_ab(a, b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
-		rev_rotate_ab(a, b, cheapest);
-	ft_printf("-----------------------------------\n");
-	print_list(a, "A");
-	print_list(b, "B");
-	finish_rotate(b, cheapest, 'b');
-	finish_rotate(a, cheapest->target_node, 'a');
-	ft_printf("-----------------------------------\n");
-	print_list(a, "A");
-	print_list(b, "B");
-	ft_printf("-----------------------------------\n");
-	pa(b, a);
-	print_list(a, "A");
-	print_list(b, "B");
-	ft_printf("-----------------------------------\n");
 }
+
+
+// void move_nodes(t_node **a, t_node **b)
+// {
+// 	t_node *cheapest;
+// 	cheapest = return_cheapest(*b);
+// 	if (cheapest->above_median && cheapest->target_node->above_median)
+// 		rotate_ab(a, b, cheapest);
+// 	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+// 		rev_rotate_ab(a, b, cheapest);
+// 	finish_rotate(b, cheapest, 'b');
+// 	finish_rotate(a, cheapest->target_node, 'a');
+// 	pa(b, a);
+// }
 
 // We're going to rotate both stacks until target/cheapest is on top
 void rotate_ab(t_node **a, t_node **b, t_node *cheapest)
@@ -127,16 +116,23 @@ void finish_rotate(t_node **stack, t_node *top_node, char name)
 			}
 			else
 			{
+				ft_printf("top_node value:%i\ntop_node index: %i\n", top_node->value, top_node->index);	
+				ft_printf("stack's index: %i\nstack's val: %i\n", (*stack)->index, (*stack)->value);
 				rra(stack);
 //				ft_printf("stack len:%i\n", ft_stacklen(*stack));
-				ft_printf("cheapest value:%i\ncheapest index: %i\n", top_node->value, top_node->index);	
+				ft_printf("top_node value:%i\ntop_node index: %i\n", top_node->value, top_node->index);	
 				ft_printf("stack's index: %i\nstack's val: %i\n", (*stack)->index, (*stack)->value);
+				ft_printf("====================================\n");
 			}
 		}
 		else if (name == 'b')
 		{
 			if (top_node->above_median)
+			{
 				rb(stack);
+				// ft_printf("cheapest value:%i\ncheapest index: %i\n", top_node->value, top_node->index);	
+				// ft_printf("stack's index: %i\nstack's val: %i\n", (*stack)->index, (*stack)->value);
+			}
 			else
 				rrb(stack);
 		}

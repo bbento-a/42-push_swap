@@ -35,6 +35,7 @@ void	append_node(t_node **stack, int n)
 	if (!(new_node))
 		return ;
 	new_node->next = NULL;
+	new_node->cheapest = false;
 	new_node->value = n;
 	if (!(*stack))
 	{
@@ -47,8 +48,6 @@ void	append_node(t_node **stack, int n)
 		last_node->next = new_node;
 		new_node->prev = last_node;
 	}
-	ft_printf("node value: %i\n", new_node->value);
-	// ft_printf("last node value: %i\n", last_node->value);
 }
 
 // This function will iterate all arguments and append the value to a new node
@@ -71,8 +70,4 @@ void	initialize_stack(t_node **a, char **argv, bool argc_2)
 		append_node(a, (int)n);
 		i++;
 	}
-	ft_printf("Stack a lenght: %i\n", ft_stacklen(*a));
-	ft_printf("::::::::::::::::::::::::::::::::\n");
-	print_list(a, "A");
-	ft_printf("::::::::::::::::::::::::::::::::\n");
 }

@@ -78,6 +78,9 @@ void		free_mat(char **mat);
 void		free_stack(t_node **stack);
 int			count_matlen(char **mat);
 
+//TEST
+void		init_cheapest(t_node *stack);
+
 //
 // Moves operations
 // 

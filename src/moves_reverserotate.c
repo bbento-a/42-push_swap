@@ -18,7 +18,7 @@ static void	reverserotate(t_node **stack)
 	int		len;
 
 	len = ft_stacklen(*stack);
-	if (len < 2 || !*stack || !stack)
+	if (len == 1 || !*stack || !stack)
 		return ;
 	lastnode = find_lastnode(*stack);
 	lastnode->prev->next = NULL;

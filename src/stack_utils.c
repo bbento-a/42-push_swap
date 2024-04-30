@@ -44,14 +44,12 @@ int ft_stacklen(t_node *stack)
 	int len;
 
 	if (!stack)
-	{
 		return (0);
-	}
 	len = 0;
 	while (stack)
 	{
+		++len;
 		stack = stack->next;
-		len++;
 	}
 	return (len);
 }

@@ -18,9 +18,7 @@ void three_sort(t_node **stack)
 
 	highestval = find_highest(*stack);
 	if (*stack == highestval)
-	{
 		ra(stack);
-	}
 	else if ((*stack)->next == highestval)
 	{
 		rra(stack);
@@ -56,7 +54,7 @@ t_node *find_smallest(t_node *stack)
 
 	if (!stack)
 		return (NULL);
-	check_smallest = INT_MAX;
+	check_smallest = LONG_MAX;
 	while (stack)
 	{
 		if (stack->value < check_smallest)

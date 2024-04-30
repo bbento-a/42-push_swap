@@ -17,7 +17,7 @@ static void	swap(t_node **ptr)
 	int	len;
 
 	len = ft_stacklen(*ptr);
-	if (len < 2 || !*ptr || !ptr)
+	if (len == 1 || !*ptr || !ptr)
 		return ;
 	*ptr = (*ptr)->next;
 	(*ptr)->prev->prev = *ptr;
