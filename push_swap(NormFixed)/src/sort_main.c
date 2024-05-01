@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:16:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 19:32:58 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:41:50 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ void	main_sort(t_node **a, t_node **b)
 		a_len--;
 	}
 	three_sort(a);
-	while (*b) // Here's where we're going to sort the whole stack
+	while (*b)
 	{
-		set_sortvals(*a, *b); // setting all values and positions to the nodes;
-		move_nodes(a, b);	  // here is where we actually move the nodes, according to their sort values
-							  // we repeat this process until we have no nodes in stack b
+		set_sortvals(*a, *b);
+		move_nodes(a, b);
 	}
 	set_nodeindex(*a);
 	smallest_node = find_smallest(*a);
@@ -41,22 +40,22 @@ void	main_sort(t_node **a, t_node **b)
 			rra(a);
 }
 
-void move_nodes(t_node **a, t_node **b)
+void	move_nodes(t_node **a, t_node **b)
 {
-	t_node *cheapest;
+	t_node	*cheapest;
 
 	cheapest = return_cheapest(*b);
 	if (cheapest->above_median && cheapest->target_node->above_median)
 		rotate_ab(a, b, cheapest);
-	else if (!(cheapest->above_median) && !(cheapest->target_node->above_median))
+	else if (!(cheapest->above_median)
+		&& !(cheapest->target_node->above_median))
 		rev_rotate_ab(a, b, cheapest);
 	finish_rotate(b, cheapest, 'b');
 	finish_rotate(a, cheapest->target_node, 'a');
 	pa(b, a);
 }
 
-// We're going to rotate both stacks until target/cheapest is on top
-void rotate_ab(t_node **a, t_node **b, t_node *cheapest)
+void	rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 {
 	while (*a != cheapest->target_node && *b != cheapest)
 		rr(a, b);
@@ -64,8 +63,7 @@ void rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 	set_nodeindex(*b);
 }
 
-// Same as before but reverse rotate
-void rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest)
+void	rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 {
 	while (*a != cheapest->target_node && *b != cheapest)
 		rrr(a, b);
@@ -73,9 +71,7 @@ void rev_rotate_ab(t_node **a, t_node **b, t_node *cheapest)
 	set_nodeindex(*b);
 }
 
-// Here if one of the nodes (cheapest or target) is on top of one of the stacks,
-// this function will take the one that is not to the top of its stack
-void finish_rotate(t_node **stack, t_node *top_node, char name)
+void	finish_rotate(t_node **stack, t_node *top_node, char name)
 {
 	set_nodeindex(*stack);
 	while (*stack != top_node)

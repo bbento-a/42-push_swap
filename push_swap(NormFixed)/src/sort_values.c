@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 17:45:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 19:33:40 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 10:38:11 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	set_sortvals(t_node	*a, t_node *b)
 	set_cheapest(b);
 }
 
-// Defines the current position of each node in the stack and bool above_median
 void	set_nodeindex(t_node *stack)
 {
 	int	i;
@@ -43,7 +42,6 @@ void	set_nodeindex(t_node *stack)
 	}
 }
 
-// Sets each target node from stack a on each node of stack b
 void	set_targetnode(t_node *a, t_node *b)
 {
 	t_node	*target_node;
@@ -52,7 +50,7 @@ void	set_targetnode(t_node *a, t_node *b)
 
 	while (b)
 	{
-		best_index = LONG_MAX; // placeholder
+		best_index = LONG_MAX;
 		current_a = a;
 		while (current_a)
 		{
@@ -72,7 +70,6 @@ void	set_targetnode(t_node *a, t_node *b)
 	}
 }
 
-// Defines the push price of each node according to their position in the stack
 void	set_price(t_node *a, t_node *b)
 {
 	int	len_a;
@@ -83,17 +80,16 @@ void	set_price(t_node *a, t_node *b)
 	while (b)
 	{
 		b->price = b->index;
-		if (!(b->above_median))  // Defines prices if b node's below median
+		if (!(b->above_median))
 			b->price = len_b - (b->index);
-		if (b->target_node->above_median) // Adds cost to this node through by its target node if above median (in a stack) 
+		if (b->target_node->above_median)
 			b->price += b->target_node->index;
 		else
-			b->price += len_a - (b->target_node->index); // Adds cost to this node through its target node if under median
+			b->price += len_a - (b->target_node->index);
 		b = b->next;
 	}
 }
 
-// Flags the best case to execute (best node to push)
 void	set_cheapest(t_node *b)
 {
 	t_node	*best_case;
