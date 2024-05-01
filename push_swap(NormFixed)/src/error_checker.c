@@ -6,7 +6,7 @@
 /*   By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 06:05:38 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 19:38:34 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:38:23 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@ int	syntax_checker(char *argv)
 {
 	int	i;
 
-	i = 0;
-	if (!(argv[0] == '-' || argv [0] == '+'
-			|| (argv[0] >= '0' && argv[0] <= '9')))
+	i = 1;
+	if (!(argv[0] == '-' || argv[0] == '+'
+		|| (argv[0] >= '0' && argv[0] <= '9')))
 		return (1);
 	if ((argv[0] == '-' || argv[0] == '+')
-		&& (argv[1] < '0' && argv[1] > '9'))
+		&& !(argv[1] >= '0' && argv[1] <= '9'))
 		return (1);
-	while (argv[++i])
-		if (argv[i] < '0' && argv[i] > '9')
+	while (argv[i])
+	{
+		if (!(argv[i] >= '0' && argv[i] <= '9'))
 			return (1);
+		i++;
+	}
 	return (0);
 }
 

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
+#    By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 14:19:45 by bbento-a          #+#    #+#              #
-#    Updated: 2024/04/23 23:37:32 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/05/01 15:31:39 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,8 @@ PUSH_SWAP_DIR		=	$(SRC_DIR)error_checker.c \
 						$(SRC_DIR)sort_main.c \
 						$(SRC_DIR)sort_small.c \
 						$(SRC_DIR)sort_values.c \
-						$(SRC_DIR)split.c \
 						$(SRC_DIR)stack_start.c \
 						$(SRC_DIR)stack_utils.c \
-						$(SRC_DIR)testing_utils.c \
 
 # Concatenate all source files
 SRCS 				=  $(PUSH_SWAP_DIR)

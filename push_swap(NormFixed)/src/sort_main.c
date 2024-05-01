@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 11:16:24 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/05/01 10:41:50 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:22:28 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	main_sort(t_node **a, t_node **b)
 	int		a_len;
 
 	a_len = ft_stacklen(*a);
-	ft_printf("First Len: %d\n", a_len);
 	while (a_len > 3)
 	{
 		pb(a, b);

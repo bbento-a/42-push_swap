@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:36:47 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 18:42:45 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:25:36 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,14 +121,5 @@ void		set_nodeindex(t_node *stack);
 void		set_targetnode(t_node *a, t_node *b);
 void		set_price(t_node *a, t_node *b);
 void		set_cheapest(t_node *b);
-
-//
-// Testing Functions
-//
-
-//	testing_utils.c
-
-void		print_list(t_node **a, char *str);
-void		init_cheapest(t_node *stack);
 
 #endif

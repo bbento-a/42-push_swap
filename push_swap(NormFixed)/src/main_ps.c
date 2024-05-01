@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_ps.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 14:59:23 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 18:35:43 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:35:35 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc < 2 || (argc == 2 && !argv[1][0]))
 		return (1);
-	if (argc == 2)
+	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	else
 		argv = &argv[1];
@@ -35,6 +35,8 @@ int	main(int argc, char **argv)
 		else if (ft_stacklen(a) != 2 && ft_stacklen(a) != 3)
 			main_sort(&a, &b);
 	}
+	if (argc == 2)
+		free_mat(argv);
 	free_stack(&a);
 	return (0);
 }

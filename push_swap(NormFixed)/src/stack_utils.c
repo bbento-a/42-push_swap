@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+        */
+/*   By: bbento-a <bbento-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 16:04:20 by bbento-a          #+#    #+#             */
-/*   Updated: 2024/04/30 18:37:46 by bbento-a         ###   ########.fr       */
+/*   Updated: 2024/05/01 11:19:17 by bbento-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// Function that converts str to long (to avoid overflow when inserting params.)
 long	ft_atol(char *str)
 {
 	long	res;
@@ -38,7 +37,6 @@ long	ft_atol(char *str)
 	return (res * sign);
 }
 
-//	Function that counts how many nodes are there in the stack
 int	ft_stacklen(t_node *stack)
 {
 	int	len;
@@ -54,7 +52,6 @@ int	ft_stacklen(t_node *stack)
 	return (len);
 }
 
-//	Function to check if stack is sorted
 bool	ft_stacksorted(t_node *stack)
 {
 	if (!stack)

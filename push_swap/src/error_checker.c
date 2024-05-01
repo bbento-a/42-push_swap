@@ -19,15 +19,18 @@ int	syntax_checker(char *argv)
 	int	i;
 
 	i = 0;
-	if (!(argv[0] == '-' || argv [0] == '+'
-			|| (argv[0] >= '0' && argv[0] <= '9')))
+	if (!(argv[0] == '-' || argv[0] == '+'
+		|| (argv[0] >= '0' && argv[0] <= '9')))
 		return (1);
 	if ((argv[0] == '-' || argv[0] == '+')
-		&& (argv[1] < '0' && argv[1] > '9'))
+		&& !(argv[1] >= '0' && argv[1] <= '9'))
 		return (1);
-	while (argv[++i])
-		if (argv[i] < '0' && argv[i] > '9')
+	while (argv[i])
+	{
+		if (!(argv[i] >= '0' && argv[i] <= '9'))
 			return (1);
+		i++;
+	}
 	return (0);
 }
 
