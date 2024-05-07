@@ -6,7 +6,7 @@
 #    By: bbento-a <bbento-a@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/25 14:19:45 by bbento-a          #+#    #+#              #
-#    Updated: 2024/04/23 23:37:32 by bbento-a         ###   ########.fr        #
+#    Updated: 2024/05/07 11:17:06 by bbento-a         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,12 @@ NAME				= push_swap
 
 # Directories
 LIBFT				= ./libft/libft.a
-INC					= inc/
 SRC_DIR				= src/
 OBJ_DIR				= obj/
 
 # Compiler and CFlags
 CC					= cc
-CFLAGS				= -g -I #-Wall -Werror -Wextra  
+CFLAGS				= -g -I -Wall -Werror -Wextra
 RM					= rm -f
 
 # Source Files
@@ -56,12 +55,12 @@ $(LIBFT):
 all: 				$(NAME)
 
 $(NAME): 			$(OBJ) $(LIBFT)
-					@$(CC) $(CFLAGS) $(INC) $(OBJ) $(LIBFT) -o $(NAME)
+					@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 # Compile object files from source files
 $(OBJ_DIR)%.o:		$(SRC_DIR)%.c 
 					@mkdir -p $(@D)
-					@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+					@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 					@$(RM) -r $(OBJ_DIR)
